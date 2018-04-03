@@ -4,10 +4,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 app = Flask(__name__)
+app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 @app.route('/')
 def get_topics():
-    print r.json()
-    return render_template('qotd.html', quote=r.json())
+    return render_template('home.html', quote="ddf")
